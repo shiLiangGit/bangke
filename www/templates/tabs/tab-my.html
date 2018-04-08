@@ -1,0 +1,28 @@
+<ion-view view-title="个人中心" hide-nav-bar="true" hide-back-button="true">
+	<ion-header-bar>
+		<div class="common-header">
+			<h3>个人中心</h3>
+		</div>
+	</ion-header-bar>
+	<ion-content class="bodybg-normal">
+		<div class="zlz-my-header flex padding" ui-sref="user.center">
+			<img ng-src="{{globalInfo.pageMsg.avatar || pageInfo.avatar  || 'img/avatar.jpg'}}">
+			<div class="flex_1 mesg">
+				<ul>
+					<li class="flex">
+						<h4 class="text-overflow_1 flex_1">{{globalInfo.pageMsg.nickname|| pageInfo.nickname || '昵称'}}</h4>
+					</li>
+					<li class="flex">
+						<p class="flex_1 text-overflow_1">我的推荐人：{{myInfo.relationUpOneName || "暂无"}}</p>
+					</li>
+					<li class="flex">
+						<p class="flex_1"><span class="zlz-bage"><i class="iconfont icon-huiyuan" style="font-size: 14px;"></i></span>{{pageInfo.userType || '普通会员'}}&nbsp;&nbsp;&nbsp;<span>会员ID：{{globalInfo.pageMsg.uid || pageInfo.uid}}</span></p>
+					</li>
+				</ul>
+			</div>
+			<div class="flex_1">
+				<i class="ion-ios-arrow-right"></i>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

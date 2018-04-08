@@ -1,0 +1,15 @@
+<ion-view view-title="关于我们" hide-nav-bar="true">
+
+	<ion-header-bar>
+		<div class="common-header">
+			<i class="iconfont icon-back" ng-click="$ionicGoBack()"></i>
+			<h3>关于我们</h3>
+		</div>
+	</ion-header-bar>
+
+	<ion-content class="content_ccc">
+		<ion-refresher pulling-text="下拉刷新" refreshing-icon="" on-refresh="reload()"></ion-refresher>
+		<div class="t_us_wrap" ng-bind-html="aboutUs"></div>
+	</ion-content>
+
+</ion-view>

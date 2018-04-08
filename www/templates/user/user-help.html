@@ -1,0 +1,25 @@
+<ion-view view-title="代理加盟" hide-nav-bar="true">
+
+	<ion-header-bar>
+		<div class="common-header">
+			<i class="iconfont icon-back" ng-click="$ionicGoBack()"></i>
+			<h3>代理加盟</h3>
+		</div>
+	</ion-header-bar>
+
+	<ion-content overflow-scroll="false">
+		<div class="h10ccc"></div>
+		<ion-refresher pulling-text="下拉刷新" refreshing-icon="" on-refresh="reload()"></ion-refresher>
+		<div class="common-empty" ng-if="info.list.length < 1">什么也没有</div>
+		<ul class="t_help_wrap" ng-if="info.list.length > 0">
+			<li class="on" ng-repeat="x in info.list" ui-sref="user-help-details({id:x.id})">
+				<a href="javascript:;" class="tlt flex">
+					<b class="ion-chatbubbles t_icon l10"></b>
+					<h3 class="flex_1 text-overflow_1" ng-bind="x.title"></h3>
+					<i class="ion-ios-arrow-right t_arrow_right"></i>
+				</a>
+			</li>
+		</ul>
+	</ion-content>
+
+</ion-view>

@@ -1,0 +1,19 @@
+<ion-view view-title="代理加盟详情" hide-nav-bar="true">
+
+	<ion-header-bar>
+		<div class="common-header">
+			<i class="iconfont icon-back" ng-click="$ionicGoBack()"></i>
+			<h3>代理加盟详情</h3>
+		</div>
+	</ion-header-bar>
+
+	<ion-content overflow-scroll="false">
+		<div class="common-empty" ng-if="data.length < 1">什么也没有</div>
+		<div class="t_bmessagecont_wrap">
+			<div class="t_h">
+				<h2 class="text-overflow_1">{{info.detail.title}}</h2>
+			</div>
+			<div class="t_c" ng-bind-html="info.detail.content"></div>
+		</div>
+	</ion-content>
+</ion-view>

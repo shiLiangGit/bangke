@@ -1,0 +1,60 @@
+<ion-view view-title="账号注册" hide-nav-bar="true" >
+
+	<ion-header-bar>
+		<div class="t_header">
+			<div class="t_back" ng-click="$ionicGoBack()">
+				<i class="ion-ios-arrow-left"></i>
+				<span>返回</span>
+			</div>
+			<h1>注册</h1>
+		</div>
+	</ion-header-bar>
+
+	<ion-content class="has-header content_ccc bodybg-normal" overflow-scroll="false">
+		<!--注册流程-->
+		<div class="h_register">
+			<span ng-class="{'fontColor':showNext==1}">1输入手机号</span>
+			<b class="ion-ios-arrow-forward"></b>
+			<span ng-class="{'fontColor':showNext==2}">2输入验证码</span>
+			<b class="ion-ios-arrow-forward"></b>
+			<span ng-class="{'fontColor':showNext==3}">3设置密码</span>
+		</div>
+		<!--获取验证码-->
+		<div class="t_backMima_message" ng-if="showNext==1">
+			<div class="s c">
+				<input type="number" maxlength="11" ng-model="reg.mobile" placeholder="请输入您的手机号">
+			</div>
+			<div class="t_backMima_btn"  ng-class="{'active': reg.mobile && agree}">
+				<button  ng-disabled="!(reg.mobile && agree)" ng-click="getCaptcha()">发送短信验证码</button>
+			</div>
+			<div class="h_agree">
+				<label ng-class="agree ? 'ion-android-checkbox' : 'ion-android-checkbox-outline-blank'" ng-click="choose()"></label>
+				<span>我已经阅读并同意《会员注册协议》</span>
+			</div>
+		</div>
+		<!--校验验证码-->
+		<div class="h_yanzheng" ng-if="showNext==2">
+			<div class="h_intext">
+				<input type="text" ng-model="reg.captcha"  maxlength="6" placeholder="请输入验证码">
+				<label ng-click="getCaptcha()" ng-class="{'missclick': reg.bol}">重新获取(<b>{{reg.number}}</b>)</label>
+			</div>
+			<div class="t_backMima_btn"  ng-class="{'no': !reg.captcha}">
+				<button  ng-disabled="!reg.captcha" ng-click="next()">提交短信验证码</button>
+			</div>
+		</div>
+		<!--设置密码-->
+		<div class="t_backMima_message" ng-if="showNext==3">
+			<div class="s c h">
+				<input type="password" ng-model="reg.password" placeholder="输入密码">
+			</div>
+			<div class="s c h">
+				<input type="password" ng-model="reg.repassword" placeholder="确认密码">
+			</div>
+			<div class="t_backMima_btn"  ng-class="{'no': !reg.password || !reg.repassword}">
+				<button  ng-disabled="!reg.password || !reg.repassword" ng-click="next()">提交密码</button>
+			</div>
+		</div>
+
+
+	</ion-content>
+</ion-view>

@@ -1,0 +1,41 @@
+<ion-view view-title="忘记密码" hide-nav-bar="true">
+
+	<ion-header-bar>
+		<div class="t_header">
+			<div class="t_back" ng-click="$ionicGoBack()">
+				<i class="ion-ios-arrow-left"></i>
+				<span>返回</span>
+			</div>
+			<h1>忘记密码</h1>
+		</div>
+	</ion-header-bar>
+
+	<ion-content class="has-header content_ccc bodybg-normal" overflow-scroll="false">
+
+		<div class="t_backMima_message" ng-if="showNext==1">
+			<div class="s c h">
+				<input type="number" maxlength="11" ng-model="reg.mobile" placeholder="请输入您的手机号">
+			</div>
+			<div class="d c h">
+				<input type="text" ng-model="reg.captcha" maxlength="6" placeholder="请输入您的验证码">
+				<button ng-disabled="reg.bol" ng-click="getCaptcha()"><span ng-if="!reg.bol">获取验证码</span><span
+					ng-if="reg.bol">重新获取{{reg.number}}秒</span></button>
+			</div>
+			<div class="t_backMima_btn" ng-class="{'active': reg.captcha && reg.mobile}">
+				<button ng-disabled="!reg.captcha || !reg.mobile" ng-click="next()">下一步</button>
+			</div>
+		</div>
+
+		<div class="t_backMima_message" ng-if="showNext==3">
+			<div class="s c">
+				<input type="password" ng-model="reg.password" placeholder="请输入您的密码">
+			</div>
+			<div class="s c">
+				<input type="password" ng-model="reg.repassword" placeholder="请确认您的密码">
+			</div>
+			<div class="t_backMima_btn" ng-class="{'active': reg.password && reg.repassword}">
+				<button ng-disabled="!reg.password || !reg.repassword" ng-click="next()">提交密码</button>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

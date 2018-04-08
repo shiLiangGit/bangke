@@ -1,0 +1,40 @@
+<ion-view view-title="升级会员" hide-nav-bar="true">
+	<ion-header-bar>
+		<div class="t_header">
+			<div class="t_back" ng-click="upgradeMember.hide()">
+				<i class="ion-ios-arrow-left"></i>
+				<span>返回</span>
+			</div>
+			<h1>升级会员</h1>
+		</div>
+	</ion-header-bar>
+	<ion-content>
+		<div>
+			<form action="" method="post" enctype="multipart/form-data" id="myForm">
+				<div class="zl-input">
+					<label>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label>
+					<input type="text" name="name" maxlength="8" placeholder="请输入联系人名字" ng-model="pageInfo.data.username">
+				</div>
+				<div class="zl-input ">
+					<label>电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话：</label>
+					<input type="number" name="mobile" maxlength="13" id="mobile" placeholder="请输入电话号码" ng-model="pageInfo.data.mobile">
+				</div>
+				<div class="zl-input t_t" ng-class="{'bgcf8':1}" style="border-bottom: none;">
+					<label>支付凭证：</label>
+					<div>
+						<em class="iconfont icon-add" ng-click="uploadAvatar()"></em>
+						<i id="divImg"></i>
+					</div>
+				</div>
+				<div>
+					<div class="zl-input" style="border: none">
+						<input type="hidden" name="token" value="ec4N"/>
+						<input type="hidden" name="id" value=""/>
+						<button name="submit" type="button" ng-click="submit()">提交申请</button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+	</ion-content>
+</ion-view>

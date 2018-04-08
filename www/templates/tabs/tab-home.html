@@ -1,0 +1,58 @@
+<ion-view view-title="主页" hide-nav-bar="true">
+	<ion-content class="bodybg-normal">
+		<!--<div class="t_home_wrap" ui-sref="tab.my">-->
+			<!--<div class="t_home_header flex">-->
+				<!--<div class="img">-->
+					<!--<img ng-src="{{globalInfo.pageMsg.avatar||'img/avatar.jpg'}}" err-src="img/avatar.jpg">-->
+				<!--</div>-->
+				<!--<div class="txt flex_1" ng-bind="globalInfo.pageMsg.nickname"></div>-->
+			<!--</div>-->
+		<!--</div>-->
+		<div class="s-home-notice flex" ng-if="pageInfo.data.notice">
+			<span class="p1"><i class="iconfont icon-notification"></i>公告</span>
+			<marquee class="flex_1 p2" direction="left" ng-bind-html="pageInfo.data.notice"></marquee>
+		</div>
+
+		<ion-slide-box delegate-handle="slideimgs" does-continue="true" show-pager="true" auto-play="true">
+			<ion-slide ng-repeat="x in pageInfo.data.slide" ng-click="$global.openHref(x.link)">
+				<img ng-src="{{x.picture}}">
+			</ion-slide>
+		</ion-slide-box>
+
+		<div class="flex s-home-nav">
+			<div class="flex_1" ui-sref="user.user-help">
+				<a href="javascript:;">
+					<i class="iconfont icon-diamondzuanshi"></i>
+					<h3 class="text-overflow_1">代理加盟</h3>
+				</a>
+			</div>
+			<div class="flex_1" ui-sref="home.member">
+				<a href="javascript:;">
+					<i class="iconfont icon-3"></i>
+					<h3 class="text-overflow_1">会员等级</h3>
+				</a>
+			</div>
+			<div class="flex_1">
+				<a href="tencent://message/?uin=1101101101&Site=&Menu=yes">
+					<i class="iconfont icon-service"></i>
+					<h3 class="text-overflow_1">在线沟通</h3>
+				</a>
+			</div>
+		</div>
+		<div class="s-help-class s-common">
+			<h3><span><i class="iconfont icon-ketang"></i>帮客课堂</span></h3>
+			<ul>
+				<li ng-repeat="x in pageInfo.data.article" ui-sref="home.articleDetails({id:x.id})">
+					<a href="javascript:" class="flex">
+						<img ng-src="{{x.thumb}}">
+						<div  class="flex_1">
+							<h3 class="text-overflow_1">{{x.title}}</h3>
+							<p class="text-overflow_2">{{x.description}}</p>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</ion-content>
+</ion-view>
+

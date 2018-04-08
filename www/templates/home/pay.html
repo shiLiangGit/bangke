@@ -1,0 +1,50 @@
+<ion-view view-title="会员等级" hide-nav-bar="true">
+	<ion-header-bar>
+		<div class="t_header">
+			<div class="t_back" ng-click="pay.hide()">
+				<i class="ion-ios-arrow-left"></i>
+				<span>返回</span>
+			</div>
+			<h1>会员等级</h1>
+		</div>
+	</ion-header-bar>
+	<ion-content class="bodybg-normal">
+		<div class="co-pay">
+			<div>支付方式</div>
+			<ul>
+				<li class="flex" ng-click="selectPayType('wechat')">
+					<img src="img/wechat_pay.png"/>
+					<div class="co-pay-info flex_1">
+						<h4>微信支付</h4>
+						<p>亿万用户选择，更快更安全</p>
+					</div>
+					<i class="iconfont"
+					   ng-class="{'icon-roundcheckfill checked': payType == 'wechat', 'icon-round': payType != 'wechat'}"></i>
+				</li>
+				<li class="flex" ng-click="selectPayType('alipay')">
+					<img src="img/ali_logo.png"/>
+					<div class="co-pay-info flex_1">
+						<h4>支付宝</h4>
+						<p>数亿用户都在使用，安全可托付</p>
+					</div>
+					<i class="iconfont "
+					   ng-class="{'icon-roundcheckfill checked': payType == 'alipay', 'icon-round': payType != 'alipay'}"></i>
+				</li>
+				<li class="flex" ng-click="selectPayType('credit')">
+					<img src="img/xianxia.png"/>
+					<div class="co-pay-info flex_1">
+						<h4>手动打款</h4>
+						<p>线下付款</p>
+					</div>
+					<i class="iconfont" ng-class="{'icon-roundcheckfill checked': payType == 'credit', 'icon-round': payType != 'credit'}"></i>
+				</li>
+			</ul>
+		</div>
+
+	</ion-content>
+	<ion-footer-bar>
+		<div class="s-pay-btn">
+			<buttton class="button button-assertive" ng-click="orderConfirm()">确定</buttton>
+		</div>
+	</ion-footer-bar>
+</ion-view>

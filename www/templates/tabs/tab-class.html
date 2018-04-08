@@ -1,0 +1,33 @@
+<ion-view view-title="帮客课堂" hide-nav-bar="true">
+	<ion-header-bar>
+		<div class="common-header">
+			<i class="iconfont icon-back" ng-click="$ionicGoBack()"></i>
+			<h3>帮客课堂</h3>
+		</div>
+	</ion-header-bar>
+	<ion-content class="bodybg-normal">
+
+		<div class="s-study-class s-common">
+			<h3><span><i class="iconfont icon-kechengfenlei" style="color: #c82225;"></i>课程分类</span></h3>
+			<ul class="clearfix">
+				<li  ng-click="chooseCategory(class.id)" ng-repeat="class in category"><a href="javascrpit:" ng-class="{'on':active == class.id}">{{class.title}}</a></li>
+			</ul>
+		</div>
+		<div class="s-help-class s-common">
+			<h3><span><i class="iconfont icon-tag" style="color: #c82225;"></i>相关课程</span></h3>
+			<ul>
+				<li ng-repeat="list in lists" ui-sref="home.articleDetails({id:list.id})">
+					<a href="javascript:" class="flex">
+						<img ng-src="{{list.thumb}}" src="http://develop.weiyuntop.com/attachment/images/1/2016/12/B8rC66yxjlOOA45C5R6C4Y8ZhrI6w8.jpg">
+						<div  class="flex_1">
+							<h3 class="text-overflow_1">{{list.title}}</h3>
+							<p class="text-overflow_2">{{list.description}}</p>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+	</ion-content>
+</ion-view>
+

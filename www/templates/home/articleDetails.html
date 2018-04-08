@@ -1,0 +1,17 @@
+<ion-view view-title="文章详情" hide-nav-bar="true">
+
+	<ion-header-bar>
+		<div class="common-header">
+			<i class="iconfont icon-back" ng-click="$ionicGoBack()"></i>
+			<h3>文章详情</h3>
+		</div>
+	</ion-header-bar>
+
+	<ion-content>
+		<div class="s-article-detai">
+			<h3>{{articleDetails.title}}</h3>
+			<p class="_info" ng-cloak><span ng-if="articleDetails.createtime">时间：{{articleDetails.createtime}}</span>&nbsp;&nbsp;<span ng-if="articleDetails.author">作者：{{articleDetails.author}}</span></p>
+			<div class="content" ng-bind-html="articleDetails.info"></div>
+		</div>
+	</ion-content>
+</ion-view>

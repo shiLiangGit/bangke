@@ -1,0 +1,21 @@
+<ion-view view-title="地址" hide-nav-bar="true">
+	<div class="modal">
+		<ion-header-bar>
+			<div class="t_header">
+				<div class="t_back" ng-click="area.hide();">
+					<i class="ion-ios-arrow-left"></i>
+					<span>返回</span>
+				</div>
+				<h1>我的地址</h1>
+			</div>
+		</ion-header-bar>
+		<ion-content class="bodybg-normal">
+			<div class="ss-my-address">
+				<ul>
+					<li ng-repeat="(x, y) in areaList" ng-click="selectArea(x)">{{y.title || y}}</li>
+				</ul>
+			</div>
+		</ion-content>
+	</div>
+</ion-view>
+

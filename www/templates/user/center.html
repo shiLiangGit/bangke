@@ -1,0 +1,70 @@
+<ion-view view-title="设置" hide-nav-bar="true">
+	<ion-header-bar>
+		<div class="common-header">
+			<i class="iconfont icon-back" ng-click="$ionicGoBack()"></i>
+			<h3>设置</h3>
+		</div>
+	</ion-header-bar>
+	<ion-content class="bodybg-normal">
+		<ul class="t_mess_list _h10">
+			<li ui-sref="user.info">
+				<a href="javascript:;" class="flex">
+					<b class="ion-person-stalker t_icon assertive"></b>
+					<h3 class="flex_1">个人资料</h3>
+					<i class="ion-ios-arrow-right t_arrow_right"></i>
+				</a>
+			</li>
+			<!--<li ui-sref="user.my-account">-->
+				<!--<a href="javascript:;" class="flex">-->
+					<!--<b class="ion-ribbon-b t_icon assertive"></b>-->
+					<!--<h3 class="flex_1">我的账户</h3>-->
+					<!--<i class="ion-ios-arrow-right t_arrow_right"></i>-->
+				<!--</a>-->
+			<!--</li>-->
+			<li ui-sref="user.safeSetup">
+				<a href="javascript:;" class="flex">
+					<b class="ion-locked t_icon assertive"></b>
+					<h3 class="flex_1">安全中心</h3>
+					<i class="ion-ios-arrow-right t_arrow_right"></i>
+				</a>
+			</li>
+		</ul>
+		<ul class="t_mess_list">
+			<!--<li ui-sref="user.user-help">-->
+				<!--<a href="javascript:;" class="flex">-->
+					<!--<b class="ion-chatbubbles t_icon calm"></b>-->
+					<!--<h3 class="flex_1">用户帮助</h3>-->
+					<!--<i class="ion-ios-arrow-right t_arrow_right"></i>-->
+				<!--</a>-->
+			<!--</li>-->
+			<li ui-sref="version">
+				<a href="javascript:;" class="flex">
+					<b class="ion-clipboard t_icon calm"></b>
+					<h3 class="flex_1">版本说明</h3>
+					<i class="ion-ios-arrow-right t_arrow_right"></i>
+				</a>
+			</li>
+			<li ng-click="checkUpdate()">
+				<a href="javascript:;" class="flex">
+					<b class="ion-upload t_icon calm"></b>
+					<h3 class="flex_1">检查更新</h3>
+					<i class="ion-ios-arrow-right t_arrow_right"></i>
+				</a>
+			</li>
+			<li ui-sref="aboutUs">
+				<a href="javascript:;" class="flex">
+					<b class="ion-happy-outline t_icon calm"></b>
+					<h3 class="flex_1">关于我们</h3>
+					<i class="ion-ios-arrow-right t_arrow_right"></i>
+				</a>
+			</li>
+		</ul>
+	</ion-content>
+
+	<ion-footer-bar>
+		<div class="t_mess_btn" ng-click="logout()">
+			<button class="btn">安全退出</button>
+		</div>
+	</ion-footer-bar>
+</ion-view>
+

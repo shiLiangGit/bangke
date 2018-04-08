@@ -1,0 +1,76 @@
+<ion-view view-title="个人资料" hide-nav-bar="true">
+	<div ng-show="!bol">
+		<ion-header-bar>
+			<div class="common-header">
+				<i class="iconfont icon-back" ng-click="$ionicGoBack()"></i>
+				<h3>个人资料</h3>
+			</div>
+		</ion-header-bar>
+		<ion-content class="bodybg-normal">
+			<div class="t_update_wrap">
+				<div class="touxiang flex">
+					<h3 class="flex_1">头像</h3>
+					<div class="img">
+						<img ng-src="{{up.userInfo.avatar||'img/avatar.jpg'}}" alt="" ng-click="uploadAvatar()" id="myImage">
+					</div>
+				</div>
+
+				<div class="flex nicheng" ng-click="changeBol()">
+					<h3 class="">用户昵称</h3>
+					<p class="n flex_1" ng-bind="up.userInfo.nickname"></p>
+					<i class="ion-ios-arrow-right t_arrow_right ns"></i>
+				</div>
+				<div class="zhanghao">
+					<h3 class="">云联惠ID</h3>
+					<input type="text" placeholder="请输入您的云联惠ID" ng-model="person.yunId"/>
+				</div>
+				<div class="zhanghao">
+					<h3 class="">Q&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Q</h3>
+					<input type="text" placeholder="请输入您的QQ号码" ng-model="person.qq"/>
+				</div>
+				<div class="zhanghao">
+					<h3 class="">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱</h3>
+					<input type="text" placeholder="请输入您的邮箱地址" ng-model="person.email"/>
+				</div>
+				<div class="zhanghao">
+					<h3 class="">身份证号</h3>
+					<input type="text" placeholder="请输入您的身份证号码" ng-model="person.idcard"/>
+				</div>
+				<div class="flex nicheng" ng-click="openModal()">
+					<h3 class="">用户地区</h3>
+					<p class="n text-overflow_1 flex_1" ng-bind="up.userInfo.area||'点击选择'"></p>
+					<i class="ion-ios-arrow-right t_arrow_right ns"></i>
+				</div>
+				<div class="zhanghao">
+					<h3 class="">手&nbsp;&nbsp;机&nbsp;&nbsp;号</h3>
+					<p class="flex_1">{{up.userInfo.mobile}}</p>
+				</div>
+			</div>
+			<button class="t_update_btn" ng-class="{'on':(up.userInfo.nickname && person.yunId && person.qq && person.email && person.idcard)}" ng-click="saveAvatar()" ng-disabled = "!(up.userInfo.nickname && person.yunId && person.qq && person.email && person.idcard)" >保存修改</button>
+		</ion-content>
+	</div>
+
+	<div class="t_nicheng" ng-show="bol" ng-class="{'on':!bolNone}">
+		<ion-header-bar>
+			<div class="t_header">
+				<div class="t_back" ng-click="changeBol()">
+					<i class="ion-ios-arrow-left"></i>
+					<span>返回</span>
+				</div>
+				<h1>修改昵称</h1>
+			</div>
+		</ion-header-bar>
+		<ion-content class="content_ccc">
+			<div class="h10ccc"></div>
+			<div class="t_up_wrap">
+				<p class="t_list">
+					<label class="flex">
+						<span>修改昵称</span>
+						<input type="text" class="t_input flex_1" ng-model="up.userInfo.nickname">
+					</label>
+				</p>
+				<button class="t_update_btn" ng-class="{'on': up.userInfo.nickname}" ng-click="changeBol()" ng-disabled="!up.userInfo.nickname" >提交</button>
+			</div>
+		</ion-content>
+	</div>
+</ion-view>
